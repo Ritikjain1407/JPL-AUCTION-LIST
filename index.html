@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>JPL Season 6 - Cricket Auction Pool & Player Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700;800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261010_5">
+</head>
+<body class="theme-dark">
+
+  <div class="bg-gradient-decoration"></div>
+
+  <!-- Cricket Bat & Spinning Ball Loader Overlay (Click to dismiss instantly) -->
+  <div id="cricket-loader" class="cricket-loader-overlay" onclick="hideCricketLoader()">
+    <div class="cricket-loader-box">
+      <div class="cricket-anim-container">
+        <div class="cricket-bat-wrapper">
+          <svg class="cricket-bat-svg" viewBox="0 0 100 200">
+            <!-- Handle -->
+            <rect x="44" y="10" width="12" height="60" rx="6" fill="#fef08a" stroke="#854d0e" stroke-width="2"/>
+            <rect x="42" y="10" width="16" height="15" rx="3" fill="#eab308"/>
+            <line x1="44" y1="20" x2="56" y2="20" stroke="#713f12" stroke-width="2"/>
+            <line x1="44" y1="30" x2="56" y2="30" stroke="#713f12" stroke-width="2"/>
+            <line x1="44" y1="40" x2="56" y2="40" stroke="#713f12" stroke-width="2"/>
+            <!-- Blade -->
+            <path d="M 38 70 L 62 70 L 66 180 C 66 190, 34 190, 34 180 Z" fill="#d97706" stroke="#78350f" stroke-width="3"/>
+            <path d="M 50 70 L 50 185" stroke="#b45309" stroke-width="2" stroke-dasharray="4 2"/>
+          </svg>
+        </div>
+
+        <div class="cricket-ball-wrapper">
+          <svg class="cricket-ball-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
+            <!-- Seam Stitching -->
+            <path d="M 15 50 Q 50 10 85 50 Q 50 90 15 50" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="5 3"/>
+          </svg>
+        </div>
+
+        <div class="impact-spark"></div>
+      </div>
+      <div class="loader-text">🏏 Loading Player Card...</div>
+    </div>
+  </div>
+
+  <div id="app-container">
+
+    <!-- Header -->
+    <header>
+      <div class="logo-section">
+        <img src="jpl_banner.jpg" alt="Jain Premier League Season 6" class="header-banner-logo">
+        <div class="title-area">
+          <h1>Jain Premier League</h1>
+          <p>Season 6 • Cricket Auction Pool & Player Manager</p>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-primary" onclick="addNewPlayer()" title="Add a brand new player profile">
+          ➕ Add Player
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()">
+          🌙 Dark Mode
+        </button>
+        <button class="btn btn-secondary" onclick="exportPrintView()">
+          🖨️ Print Roster
+        </button>
+        <button class="btn btn-primary" onclick="exportToExcel()">
+          📥 Export Excel (.xlsx)
+        </button>
+      </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-icon total">📋</div>
+        <div class="stat-info">
+          <div class="num" id="stat-total">66</div>
+          <div class="label">Total Players</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon photos">🖼️</div>
+        <div class="stat-info">
+          <div class="num" id="stat-photos">0</div>
+          <div class="label">Photos Attached</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon allrounder">⚡</div>
+        <div class="stat-info">
+          <div class="num" id="stat-allrounders">39</div>
+          <div class="label">All-Rounders</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon batsman">🎯</div>
+        <div class="stat-info">
+          <div class="num" id="stat-batsmen">15</div>
+          <div class="label">Batsmen</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Header -->
+    <div class="controls-header">
+      <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="tab-table" onclick="switchTab('tab-table')">
+          📊 Spreadsheet View
+        </button>
+        <button class="tab-btn" data-tab="tab-cards" onclick="switchTab('tab-cards')">
+          🎴 Auction Cards
+        </button>
+        <button class="tab-btn" data-tab="tab-teams" onclick="switchTab('tab-teams')">
+          🛡️ Teams & Squads
+        </button>
+        <button class="tab-btn" data-tab="tab-batch" onclick="switchTab('tab-batch')">
+          📁 Batch Uploader
+        </button>
+      </div>
+
+      <div class="search-filter-box">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search name, Lot # (1-58), role, team...">
+        </div>
+        <select id="status-filter" class="filter-select">
+          <option value="ALL">All Status</option>
+          <option value="UNSOLD">🔴 Unsold</option>
+          <option value="SOLD">🟢 Sold</option>
+        </select>
+        <select id="team-filter" class="filter-select">
+          <option value="ALL">All Teams</option>
+        </select>
+        <select id="role-filter" class="filter-select">
+          <option value="ALL">All Roles</option>
+          <option value="ALL-ROUNDER">All-Rounder</option>
+          <option value="BATSMAN">Batsman</option>
+          <option value="BOWLER">Bowler</option>
+          <option value="WICKET-KEEPER">Wicket-Keeper</option>
+        </select>
+        <select id="photo-filter" class="filter-select">
+          <option value="ALL">All Photos</option>
+          <option value="WITH_PHOTO">With Photo</option>
+          <option value="NO_PHOTO">Missing Photo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tab 1: Spreadsheet Table View -->
+    <div id="tab-table" class="tab-content active">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 80px;">Lot #</th>
+              <th style="width: 270px;">Player Name & Picture</th>
+              <th>Playing Role</th>
+              <th>Base Price</th>
+              <th>Status / Team</th>
+              <th>Age</th>
+              <th style="width: 130px; text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="player-table-body">
+            <!-- Dynamic rows will render here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 2: Auction Cards Grid -->
+    <div id="tab-cards" class="tab-content">
+      <div class="cards-grid" id="cards-container">
+        <!-- Dynamic cards will render here -->
+      </div>
+    </div>
+
+    <!-- Tab 3: Teams & Squad Rosters -->
+    <div id="tab-teams" class="tab-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2 style="font-family: var(--font-sports); font-size: 1.8rem; letter-spacing: 0.5px; color: var(--accent-gold);">🏆 JPL Season 6 Teams & Squad Rosters</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">Edit team names, upload custom logos, and assign or transfer players into teams.</p>
+        </div>
+        <button class="btn btn-primary" onclick="addNewTeam()">
+          ➕ Add New Team
+        </button>
+      </div>
+
+      <div class="teams-grid" id="teams-container">
+        <!-- Dynamic team cards will render here -->
+      </div>
+    </div>
+
+    <!-- Tab 3: Batch Uploader -->
+    <div id="tab-batch" class="tab-content">
+      <div class="dropzone" id="batch-dropzone">
+        <div class="dropzone-icon">📁</div>
+        <h3>Drag & Drop Player Photos Here</h3>
+        <p style="color: var(--text-secondary); margin-top: 6px;">Select multiple photo files from your computer. Photos named after players (e.g. <code>Ankur Patni.jpg</code> or <code>1.jpg</code>) will auto-assign!</p>
+        <input type="file" id="batch-file-input" multiple accept="image/*" style="display: none;">
+        <button class="btn btn-primary" style="margin: 16px auto 0 auto;" onclick="document.getElementById('batch-file-input').click()">
+          Browse Photo Files
+        </button>
+      </div>
+
+      <div id="batch-log" style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: none;">
+        <h4 style="margin-bottom: 12px; color: var(--accent-gold);">Batch Match Log</h4>
+        <div id="log-list" style="font-size: 0.88rem; max-height: 250px; overflow-y: auto;"></div>
+      </div>
+    </div>
+
+    <!-- Player Profile Full-Photo Split-Screen A4/A5 Modal -->
+    <div id="player-modal" class="modal-overlay">
+      <div class="modal-card modal-card-split">
+        <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 8px; z-index: 20;">
+          <button class="modal-back-btn" onclick="closePlayerModal()" title="Return to players list">← Back</button>
+          <button class="modal-close-btn" onclick="closePlayerModal()" title="Close profile">✕</button>
+        </div>
+
+        <div class="modal-split-container">
+          <!-- Left Column: Full-Height Player Photo -->
+          <div class="modal-left-col full-photo-side">
+            <div class="profile-avatar-full" onclick="triggerSingleUpload(currentModalPlayerId)" title="Click to upload or change player photo">
+              <div id="modal-avatar-content"></div>
+              <div class="profile-avatar-overlay">📷 Upload / Change Photo</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Banner Logo, Name, Role Pills, Base Price & Stats -->
+            <div class="modal-right-col">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; padding-right: 120px;">
+                <img src="jpl_banner.jpg" alt="JPL Season 6" class="modal-banner-badge">
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span class="card-top-tag" id="modal-lot-tag" style="background: rgba(245,158,11,0.2); font-size: 0.95rem; padding: 4px 14px;">LOT #1</span>
+                  <span class="card-top-tag">SEASON 6 AUCTION</span>
+                </div>
+              </div>
+
+              <!-- Editable Player Name Input -->
+              <div class="profile-player-name-wrapper">
+                <input type="text" id="modal-input-name" class="profile-player-name-input" placeholder="Player Name" oninput="handleModalNameChange(this.value)" onchange="saveModalStats()" title="Click to edit player name">
+                <div class="edit-name-hint">✏️ Edit Player Name Above</div>
+              </div>
+              
+              <!-- Role Selector Pills -->
+              <div class="role-selector-bar" style="justify-content: flex-start; margin-bottom: 16px;">
+                <button class="role-btn-option" data-role="ALL-ROUNDER" onclick="setPlayerRole('ALL-ROUNDER')">⚡ ALL-ROUNDER</button>
+                <button class="role-btn-option" data-role="BATSMAN" onclick="setPlayerRole('BATSMAN')">🎯 BATSMAN</button>
+                <button class="role-btn-option" data-role="BOWLER" onclick="setPlayerRole('BOWLER')">🎳 BOWLER</button>
+                <button class="role-btn-option" data-role="WICKET-KEEPER" onclick="setPlayerRole('WICKET-KEEPER')">🧤 WICKET-KEEPER</button>
+              </div>
+
+              <!-- Lot Number & Team Transfer Section -->
+              <div class="base-price-section" style="border-color: rgba(245, 158, 11, 0.5); margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <div class="modal-stat-label">🏷️ Lot # & Auction Status</div>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-gold);">Assign Lot #:</span>
+                    <input type="number" id="modal-input-lot" min="1" max="100" class="modal-stat-input" style="width: 75px; height: 34px; font-size: 1.1rem; padding: 2px 6px;" onchange="saveModalStats()">
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1.2fr 1.4fr; gap: 10px; align-items: end;">
+                  <div>
+                    <label style="font-size: 0.78rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase;">Status (Instant 1-Click)</label>
+                    <div class="status-toggle-group">
+                      <button type="button" id="btn-status-unsold" class="status-toggle-btn unsold active" onclick="setPlayerStatus('UNSOLD')">
+                        🔴 UNSOLD
+                      </button>
+                      <button type="button" id="btn-status-sold" class="status-toggle-btn sold" onclick="setPlayerStatus('SOLD')">
+                        🟢 SOLD
+                      </button>
+                    </div>
+                    <select id="modal-select-status" class="filter-select" style="display: none;" onchange="handleModalStatusChange(this.value)">
+                      <option value="UNSOLD">🔴 UNSOLD</option>
+                      <option value="SOLD">🟢 SOLD</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label style="font-size: 0.78rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase;">Transfer to Team</label>
+                    <select id="modal-select-team" class="filter-select" style="width: 100%; margin-top: 6px;" onchange="handleModalTeamChange(this.value)">
+                      <option value="">-- Select Team --</option>
+                      <!-- Dynamic team options -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Base Price Section -->
+              <div class="base-price-section">
+                <div class="modal-stat-label">💰 Auction Base Price (₹)</div>
+                <div class="stepper-control" style="margin-top: 6px;">
+                  <button class="stepper-btn stepper-btn-lg" onclick="adjustBasePrice(-1000)">-1000</button>
+                  <button class="stepper-btn" onclick="adjustBasePrice(-500)">-500</button>
+                  <div class="currency-input-wrapper">
+                    <span class="currency-symbol">₹</span>
+                    <input type="number" id="modal-input-baseprice" class="modal-stat-input" value="1000" step="500" onchange="saveModalStats()">
+                  </div>
+                  <button class="stepper-btn" onclick="adjustBasePrice(500)">+500</button>
+                  <button class="stepper-btn stepper-btn-lg" onclick="adjustBasePrice(1000)">+1000</button>
+                </div>
+                <div class="preset-price-bar">
+                  <button class="preset-price-btn" onclick="setBasePrice(500)">₹500</button>
+                  <button class="preset-price-btn" onclick="setBasePrice(1000)">₹1,000</button>
+                  <button class="preset-price-btn" onclick="setBasePrice(2000)">₹2,000</button>
+                  <button class="preset-price-btn" onclick="setBasePrice(5000)">₹5,000</button>
+                  <button class="preset-price-btn" onclick="setBasePrice(10000)">₹10,000</button>
+                </div>
+              </div>
+
+              <div class="section-title">
+                <span>🏆 JPL 4 Performance Stats & Career Record</span>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">(Press <kbd>Enter ↵</kbd> to save & next)</span>
+              </div>
+
+              <div class="stats-grid-modal">
+                <!-- Runs Stepper -->
+                <div class="modal-stat-box">
+                  <div class="modal-stat-label">🏏 Total Runs</div>
+                  <div class="stepper-control">
+                    <button class="stepper-btn stepper-btn-lg" onclick="adjustStat('runs', -10)">-10</button>
+                    <button class="stepper-btn" onclick="adjustStat('runs', -1)">-</button>
+                    <input type="number" id="modal-input-runs" class="modal-stat-input" value="0" onchange="saveModalStats()">
+                    <button class="stepper-btn" onclick="adjustStat('runs', 1)">+</button>
+                    <button class="stepper-btn stepper-btn-lg" onclick="adjustStat('runs', 10)">+10</button>
+                  </div>
+                </div>
+
+                <!-- Wickets Stepper -->
+                <div class="modal-stat-box">
+                  <div class="modal-stat-label">🥎 Total Wickets</div>
+                  <div class="stepper-control">
+                    <button class="stepper-btn" onclick="adjustStat('wickets', -1)">-</button>
+                    <input type="number" id="modal-input-wickets" class="modal-stat-input" value="0" onchange="saveModalStats()">
+                    <button class="stepper-btn" onclick="adjustStat('wickets', 1)">+</button>
+                  </div>
+                </div>
+
+                <!-- Matches Stepper -->
+                <div class="modal-stat-box">
+                  <div class="modal-stat-label">🏟️ Matches Played</div>
+                  <div class="stepper-control">
+                    <button class="stepper-btn" onclick="adjustStat('matches', -1)">-</button>
+                    <input type="number" id="modal-input-matches" class="modal-stat-input" value="0" onchange="saveModalStats()">
+                    <button class="stepper-btn" onclick="adjustStat('matches', 1)">+</button>
+                  </div>
+                </div>
+
+                <!-- High Score / Best Bowling -->
+                <div class="modal-stat-box">
+                  <div class="modal-stat-label">⭐ High Score / Best Performance</div>
+                  <input type="text" id="modal-input-highest" class="modal-stat-input" value="-" onchange="saveModalStats()" placeholder="e.g. 54* / 3-18">
+                </div>
+              </div>
+
+              <!-- Age Group -->
+              <div class="modal-info-row" style="grid-template-columns: 1fr;">
+                <div class="info-field-group">
+                  <label>🎂 Age Group</label>
+                  <input type="text" id="modal-input-age" onchange="saveModalStats()">
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; padding: 12px;" onclick="triggerSingleUpload(currentModalPlayerId)">
+                📷 Upload Photo Directly
+              </button>
+              <button class="btn btn-secondary" onclick="exportSinglePlayerCard()" style="padding: 12px 20px;">
+                🖨️ Print / Save Card
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-nav-footer">
+          <button class="btn btn-secondary" onclick="navigateModal(-1)" id="btn-prev-player">
+            ← Previous Player
+          </button>
+          <button class="modal-back-btn" onclick="closePlayerModal()" title="Close profile">
+            ✕ Return to List
+          </button>
+          <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: bold;" id="modal-player-index">1 / 58</span>
+          <button class="btn btn-primary" onclick="saveAndGoNextPlayer()" id="btn-next-player">
+            Next Player ➔ <kbd style="font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">Enter ↵</kbd>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating Interactive Cricket Animation Character Widget -->
+  <div id="cricket-mascot" class="cricket-mascot-fab" onclick="triggerCricketMascotShot()" title="Click Cricket Character for instant power shot!">
+    <div class="mascot-ball-icon">🏏</div>
+    <div class="mascot-label">JPL Cricket ⚡</div>
+  </div>
+  <div id="cricket-toast" class="cricket-toast-celebration">🚀 SIX! Out of the Park! 🔥</div>
+
+  <!-- Hidden File Input for single upload -->
+  <input type="file" id="single-file-input" accept="image/*" style="display: none;">
+  <input type="file" id="team-logo-file-input" accept="image/*" style="display: none;">
+
+  <!-- SheetJS CDN (Async) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" async></script>
+
+  <!-- Self-contained Application Logic -->
+  <script src="app.js?v=20261010_5"></script>
+</body>
+</html>
