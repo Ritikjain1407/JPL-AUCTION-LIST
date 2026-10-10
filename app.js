@@ -10,7 +10,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1-azPqAv4vvcsKY-uB-1TZN2IFA25kw4T",
     "paymentLink": "https://drive.google.com/open?id=1C8B-_7HYgRkWKGacGRrvYR-AZL6UOS09",
-    "photoUrl": "",
+    "photoUrl": "photos/player_1.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -28,7 +28,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BOWLER",
     "photoLink": "https://drive.google.com/open?id=14KLKve3X4GmGA4wCsCJZT08U8XQIUCtO",
     "paymentLink": "https://drive.google.com/open?id=1aDc7YTn13oH64P6P5XYucv3pWiKjWJZ_",
-    "photoUrl": "",
+    "photoUrl": "photos/player_2.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -46,7 +46,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1SNQ-cbS1MXIMBSRucQ9GuyYMTrbIiPef",
     "paymentLink": "https://drive.google.com/open?id=1K8Nn_WytcXoe-S3frQ_BoE-tXkWu8yER",
-    "photoUrl": "",
+    "photoUrl": "photos/player_3.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -64,7 +64,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1IhEmnjKW-V5yULMIsCfMM3MRqsP7DI3u",
     "paymentLink": "https://drive.google.com/open?id=1bMJWnHY5gyv4qnssWqIc9AhMcp1I3E3e",
-    "photoUrl": "",
+    "photoUrl": "photos/player_4.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -82,7 +82,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=159ASMhyTYv3xPX3BPYpkJadwX_86cOsn",
     "paymentLink": "https://drive.google.com/open?id=1QZc341vVlLzquDxE21FqMLpNBLYnOyle",
-    "photoUrl": "",
+    "photoUrl": "photos/player_5.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -100,7 +100,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=10NA06QbOsvv5bWwPCsZKm580NMyBnyKX",
     "paymentLink": "https://drive.google.com/open?id=1IJPAbYC0_WjaCb7L7vCdQU5IP_fRAf6R",
-    "photoUrl": "",
+    "photoUrl": "photos/player_6.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -118,7 +118,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1YGyF8_I35FObDE60Nw-q8zylG4shM6s2",
     "paymentLink": "https://drive.google.com/open?id=1w9bd6-CHb-MiJys3uR4o8wirmjH_h1C1",
-    "photoUrl": "",
+    "photoUrl": "photos/player_7.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -136,7 +136,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1At-Q3DPUAErg1pSEfKZKFftVaBpAexNC",
     "paymentLink": "https://drive.google.com/open?id=1x08uuY70EvYv5IIEhwooL2n8kkluXBaZ",
-    "photoUrl": "",
+    "photoUrl": "photos/player_8.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -154,7 +154,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=16WWQ2A4ALbt716E2zOYN1HCjJQA-0kr4",
     "paymentLink": "https://drive.google.com/open?id=1X4UzrfWc0U0w6YLmsaV-IXfW-1lGiG9W",
-    "photoUrl": "",
+    "photoUrl": "photos/player_9.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -172,7 +172,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=136BufBtrU5a-pkChWRKCqHlPtgosL26J",
     "paymentLink": "https://drive.google.com/open?id=1GrES1N_njJCrAGlhSlpu4Duh6oGUtasH",
-    "photoUrl": "",
+    "photoUrl": "photos/player_10.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -190,7 +190,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1oUlL3XYnUAC6w1Bz623Ip9KKBD9AItFO",
     "paymentLink": "https://drive.google.com/open?id=1BGso8NHy44Ba81AT_VdEZx5tViJTRv1i",
-    "photoUrl": "",
+    "photoUrl": "photos/player_11.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -208,7 +208,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1VzQx3ktLEZjVVI_KHpaPST0gOyGCGdy-",
     "paymentLink": "https://drive.google.com/open?id=10uABn6ye7bP5anNUEXfI-5ABI_PVzZpL",
-    "photoUrl": "",
+    "photoUrl": "photos/player_12.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -226,7 +226,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1I3GJnv563WAn3kUU2gauG8nxYzib6awL",
     "paymentLink": "https://drive.google.com/open?id=1K5WRuSgeO6sutN7pdoE3JkM9tGZrZ5dK",
-    "photoUrl": "",
+    "photoUrl": "photos/player_13.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -244,7 +244,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1ol-qPlfj4UZXjbWNctngVAUEf83B1hXA",
     "paymentLink": "https://drive.google.com/open?id=1hBuGa2_4CHOq-LpYOlMmw_5eevBvV1uw",
-    "photoUrl": "",
+    "photoUrl": "photos/player_14.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -262,7 +262,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1DkVR0bw47NOY83yP9EXw0XiuOSMjLCS1",
     "paymentLink": "https://drive.google.com/open?id=1Eqs8rLiBuIR93Cou8axbJKgRxhqO6qiL",
-    "photoUrl": "",
+    "photoUrl": "photos/player_15.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -280,7 +280,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1LH9n4TCcj118PcLzu6kKjaWGwrHW3Qba",
     "paymentLink": "https://drive.google.com/open?id=1SQ4NrMDF7QiCg1ahR074Ztd5voHcLGEi",
-    "photoUrl": "",
+    "photoUrl": "photos/player_16.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -298,7 +298,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BOWLER",
     "photoLink": "https://drive.google.com/open?id=1zMFknV39SPrIixnouqKTUnuw36pAN12x",
     "paymentLink": "https://drive.google.com/open?id=130X7G1JBHXxpuaic-cSn9BA0BO7s2eRO",
-    "photoUrl": "",
+    "photoUrl": "photos/player_17.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -334,7 +334,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1NQk7nl7NJlCtkBIrZyI7l2yWxnZUTIyG",
     "paymentLink": "https://drive.google.com/open?id=1DvVI0OdmiSTtp0CYG3gOedQwv0fh61eg",
-    "photoUrl": "",
+    "photoUrl": "photos/player_19.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -352,7 +352,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1sPFwySbfGoa4IQM2nGunn5j38f5BtT0W",
     "paymentLink": "https://drive.google.com/open?id=1WTZUpJFkbF0x7yOpa0Xxf607E829DWM3",
-    "photoUrl": "",
+    "photoUrl": "photos/player_20.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -370,7 +370,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1eBeX7rzseH-BZadhmAvjlGpuuIe1lkjK",
     "paymentLink": "https://drive.google.com/open?id=1fTOh_UQQS391YJjiP95HsLWZ2xnXeZ7p",
-    "photoUrl": "",
+    "photoUrl": "photos/player_21.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -388,7 +388,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1lAuxKCcZH-GmU6LYdVUYSb8JnpV3yp-G",
     "paymentLink": "https://drive.google.com/open?id=1aibOA-KA1HdwatQWHWRqgVJZ_s46T3uG",
-    "photoUrl": "",
+    "photoUrl": "photos/player_22.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -406,7 +406,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1HA_SXTf6ruVqqD4sCxZ6H4z2gyfqTo51",
     "paymentLink": "https://drive.google.com/open?id=1ur8-JTf7dqzbPuNGF-PziwSSFdrospoV",
-    "photoUrl": "",
+    "photoUrl": "photos/player_23.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -424,7 +424,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BOWLER",
     "photoLink": "https://drive.google.com/open?id=10sdGKQeMItipoGPAN43p3-zmPBGgWB0S",
     "paymentLink": "https://drive.google.com/open?id=126549Ux_z9-CJWzKzwoehV1FcMEF_pPe",
-    "photoUrl": "",
+    "photoUrl": "photos/player_24.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -442,7 +442,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "WICKET-KEEPER ( BATSMAN )",
     "photoLink": "https://drive.google.com/open?id=1-RtCPrGga5i1kxVBfQ3CaG7OPMIx-kQk",
     "paymentLink": "https://drive.google.com/open?id=1Q4wVcRv_HpH_NV6oHwgLL7kdL_8kbQ1h",
-    "photoUrl": "",
+    "photoUrl": "photos/player_25.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -460,7 +460,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1B5iXU106udEL4Lys2u7szhbiwmcBRO8y",
     "paymentLink": "https://drive.google.com/open?id=1Rc--pRWBekWAxF4GgoGmFv7eFx17J06G",
-    "photoUrl": "",
+    "photoUrl": "photos/player_26.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -496,7 +496,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1OvFvHrE4z1tCXOIdeL55K1yfWe0PkNc0",
     "paymentLink": "https://drive.google.com/open?id=1s3Xv5tW8ZHN1prOX1vf6h7M1Y1TMzU3i",
-    "photoUrl": "",
+    "photoUrl": "photos/player_28.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -514,7 +514,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=11ZnwEO5PRj6u6MzaV5FX-hjfu1RTbCYi",
     "paymentLink": "https://drive.google.com/open?id=1BwhYaaRGZyv9Z2p_o7JM871XlY_MLXOZ",
-    "photoUrl": "",
+    "photoUrl": "photos/player_29.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -550,7 +550,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1CA5ymK98iP0AOtnjj7nhF-Q9AjRPKG2I",
     "paymentLink": "https://drive.google.com/open?id=1m4BRKuBUlG7ZtUCipFQngIMf7a4tYEeM",
-    "photoUrl": "",
+    "photoUrl": "photos/player_31.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -568,7 +568,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1ZgvHB3rGKBSf_yKYhwGAER2nOB38IVnb",
     "paymentLink": "https://drive.google.com/open?id=1YIWeaEwQAhGQtDGPmFtbprd1a1uj5CnS",
-    "photoUrl": "",
+    "photoUrl": "photos/player_32.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -586,7 +586,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1NvV5penWInaZtK9hwNuHjR9-EwN_fd4I",
     "paymentLink": "https://drive.google.com/open?id=1LfyC6xx1u9DCAkoWhD832eyNU4-Bce-b",
-    "photoUrl": "",
+    "photoUrl": "photos/player_33.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -604,7 +604,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1w8RsARXJXjQq9PYPivZYiIAWsCZKH-IK",
     "paymentLink": "https://drive.google.com/open?id=1GbulKhY7Rcg5qlRAuDJ19n7UK_-fr4C0",
-    "photoUrl": "",
+    "photoUrl": "photos/player_34.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -622,7 +622,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1LxAN-4idXjOx2-TO7yKF89CNn6OjSpPV",
     "paymentLink": "https://drive.google.com/open?id=1l2Y_CyEyRqB6XC-2OuBqul1-BIxHnpfX",
-    "photoUrl": "",
+    "photoUrl": "photos/player_35.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -640,7 +640,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1NDr4iJr53GrQ1lF4Z4OZ7ERiaHUfbYan",
     "paymentLink": "https://drive.google.com/open?id=1XKOSuLBlTZeHfIHkuA_ceUATAHv3U83I",
-    "photoUrl": "",
+    "photoUrl": "photos/player_36.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -658,7 +658,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1IuD3ReP1xPt-BhUcO8KYfYL0s6TDNbmg",
     "paymentLink": "https://drive.google.com/open?id=1i_m4-jgCNfmS1FNmIyS9ZkFmHpthL6VE",
-    "photoUrl": "",
+    "photoUrl": "photos/player_37.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -676,7 +676,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1DzuP28FNnKFGzjMogbevuHqJ2x68P7ur",
     "paymentLink": "https://drive.google.com/open?id=1n1S4MMNlyP_vEJfPI_P7j0wdAvwes1Ve",
-    "photoUrl": "",
+    "photoUrl": "photos/player_38.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -694,7 +694,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BOWLING",
     "photoLink": "PHOTO SENT TO ME DIRECTLY",
     "paymentLink": "PAID CASH TO SIPPI BHAIYA",
-    "photoUrl": "",
+    "photoUrl": "photos/player_39.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -712,7 +712,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL - ROUNDER",
     "photoLink": "PHOTO SENT TO ME DIRECTLY",
     "paymentLink": "DIRECTLY SENT THE PAYMENT SCREENSHOT  TO THE JPL GROUP",
-    "photoUrl": "",
+    "photoUrl": "photos/player_40.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -766,7 +766,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL ROUNDER",
     "photoLink": "https://drive.google.com/open?id=17-SD1AzyA9rmnHBPyB2Wf17uJ-m_Kxq4",
     "paymentLink": "DIRECTLY SENT THE PAYMENT SCREENSHOT TO THE JPL GROUP",
-    "photoUrl": "",
+    "photoUrl": "photos/player_43.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -784,7 +784,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1oZ0JSp6mLmWm3lRNtL-dmtBUSCn3-bAg",
     "paymentLink": "https://drive.google.com/open?id=17-SD1AzyA9rmnHBPyB2Wf17uJ-m_Kxq4",
-    "photoUrl": "",
+    "photoUrl": "photos/player_44.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -802,7 +802,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "WICKET-KEEPER ( BATSMAN )",
     "photoLink": "https://drive.google.com/open?id=1eTIx3aN30Mq8bK5-3zdULO_RlYXB6B3h",
     "paymentLink": "https://drive.google.com/open?id=1GfH2OAB9ZRVkV0YUDLChd_s48axK3g6H",
-    "photoUrl": "",
+    "photoUrl": "photos/player_45.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -820,7 +820,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "WICKET-KEEPER ( BATSMAN )",
     "photoLink": "https://drive.google.com/open?id=1xF-kmrCm_QRptQEinxsbcyi1nWyRF32G",
     "paymentLink": "https://drive.google.com/open?id=1JMf3unxmds-oTZ2YItl8xJ--eWAbbgM5",
-    "photoUrl": "",
+    "photoUrl": "photos/player_46.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -838,7 +838,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1WhnuzlpNQobMUxcSq-5pv9WvKfefvKeF",
     "paymentLink": "payment :done directly to the JPL group",
-    "photoUrl": "",
+    "photoUrl": "photos/player_47.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -856,7 +856,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=16dJ1k7lAY7fjU9infrbN05Ac940Lp9fQ",
     "paymentLink": "https://drive.google.com/open?id=1WhnuzlpNQobMUxcSq-5pv9WvKfefvKeF",
-    "photoUrl": "",
+    "photoUrl": "photos/player_48.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -874,7 +874,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "WICKET-KEEPER ( BATSMAN )",
     "photoLink": "https://drive.google.com/open?id=18Bi810nJPiHG0qv_Jhtlgftt55e8SNh2",
     "paymentLink": "https://drive.google.com/open?id=1iEGZMK_KJN3Y87IGBkQzT2D-LHQqRW2J",
-    "photoUrl": "",
+    "photoUrl": "photos/player_49.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -892,7 +892,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1HpGHwzxzVVpNeJP0QhemQJEeEv73ZJM8",
     "paymentLink": "https://drive.google.com/open?id=1w5D8wXTwxElts8TdlvonjTcDukMFGdA6",
-    "photoUrl": "",
+    "photoUrl": "photos/player_50.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -910,7 +910,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "BATSMAN",
     "photoLink": "https://drive.google.com/open?id=1BGxW0zNidvxpZMUe5u9wFlgED1DnZN5s",
     "paymentLink": "https://drive.google.com/open?id=1cBksm3wv9QpcwVlf5BPrteouh0igrZy2",
-    "photoUrl": "",
+    "photoUrl": "photos/player_51.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -928,7 +928,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "https://drive.google.com/open?id=1sGtMDSYq3gU4RAAHn9VwX1AmLLgOsao6",
     "paymentLink": "https://drive.google.com/open?id=1kg4_dp7eFY0DRT5iRglugiJQx5e4Gli_",
-    "photoUrl": "",
+    "photoUrl": "photos/player_52.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -964,7 +964,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL ROUNDER",
     "photoLink": "",
     "paymentLink": "payment :done directly to the JPL group",
-    "photoUrl": "",
+    "photoUrl": "photos/player_54.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -982,7 +982,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL ROUNDER",
     "photoLink": "",
     "paymentLink": "payment :done directly to the JPL group",
-    "photoUrl": "",
+    "photoUrl": "photos/player_55.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -1000,7 +1000,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL ROUNDER",
     "photoLink": "",
     "paymentLink": "payment :done directly to the JPL group",
-    "photoUrl": "",
+    "photoUrl": "photos/player_56.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -1018,7 +1018,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "Batsman",
     "photoLink": "",
     "paymentLink": "payment :done directly to the JPL group",
-    "photoUrl": "",
+    "photoUrl": "photos/player_57.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -1036,7 +1036,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL ROUNDER",
     "photoLink": "",
     "paymentLink": "Yet to be done",
-    "photoUrl": "",
+    "photoUrl": "photos/player_58.jpg",
     "jpl4": {
       "runs": 0,
       "wickets": 0,
@@ -1120,7 +1120,7 @@ let players = window.INITIAL_PLAYERS || [
     "role": "ALL-ROUNDER",
     "photoLink": "",
     "paymentLink": "",
-    "photoUrl": "",
+    "photoUrl": "photos/player_62.jpg",
     "basePrice": 1000,
     "lotNumber": 62,
     "status": "UNSOLD",
