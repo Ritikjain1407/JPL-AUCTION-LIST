@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700;800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261010_5">
+  <link rel="stylesheet" href="styles.css?v=20261010_6">
 </head>
 <body class="theme-dark">
 
@@ -61,6 +61,12 @@
       <div class="action-buttons">
         <button class="btn btn-primary" onclick="addNewPlayer()" title="Add a brand new player profile">
           ➕ Add Player
+        </button>
+        <button class="btn btn-secondary" onclick="exportFullBackup()" title="Download complete backup of all 66 players, stats, teams, and all attached photos">
+          💾 Backup All (with Photos)
+        </button>
+        <button class="btn btn-secondary" onclick="document.getElementById('backup-file-input').click()" title="Restore player data and photos from backup file">
+          📂 Restore Backup
         </button>
         <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()">
           🌙 Dark Mode
@@ -406,14 +412,15 @@
   </div>
   <div id="cricket-toast" class="cricket-toast-celebration">🚀 SIX! Out of the Park! 🔥</div>
 
-  <!-- Hidden File Input for single upload -->
+  <!-- Hidden File Input for single upload & backup -->
   <input type="file" id="single-file-input" accept="image/*" style="display: none;">
   <input type="file" id="team-logo-file-input" accept="image/*" style="display: none;">
+  <input type="file" id="backup-file-input" accept=".json" style="display: none;" onchange="if(this.files[0]){ importFullBackup(this.files[0]); this.value=''; }">
 
   <!-- SheetJS CDN (Async) -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" async></script>
 
   <!-- Self-contained Application Logic -->
-  <script src="app.js?v=20261010_5"></script>
+  <script src="app.js?v=20261010_6"></script>
 </body>
 </html>

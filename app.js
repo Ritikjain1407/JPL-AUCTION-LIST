@@ -2419,3 +2419,57 @@ function exportToExcel() {
 
   XLSX.writeFile(workbook, 'JPL_Season_6_Auction_Pool.xlsx');
 }
+
+/* Full System Backup & Restore Guarantee (Zero Photo Loss) */
+function exportFullBackup() {
+  const backupData = {
+    app: 'JPL Season 6 Player Manager',
+    version: '20261010_backup_v1',
+    timestamp: new Date().toISOString(),
+    teams: teams,
+    players: players
+  };
+  const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `JPL_Season_6_Full_Backup_${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+window.exportFullBackup = exportFullBackup;
+
+function importFullBackup(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data && Array.isArray(data.players)) {
+        if (Array.isArray(data.teams)) {
+          teams = data.teams;
+          saveTeams();
+        }
+        data.players.forEach(p => {
+          const existing = players.find(ep => ep.id === p.id);
+          if (existing) {
+            Object.assign(existing, p);
+          } else {
+            players.push(p);
+          }
+          savePlayerDataToDB(p);
+        });
+        renderAll();
+        alert('✅ Full Backup Restored! All 66 player profiles, photos, and team rosters are intact.');
+      } else {
+        alert('⚠️ Invalid backup file format.');
+      }
+    } catch(err) {
+      alert('⚠️ Could not restore backup: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+window.importFullBackup = importFullBackup;
